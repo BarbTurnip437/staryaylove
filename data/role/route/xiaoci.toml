@@ -1,0 +1,94 @@
+# 渚浔笑辞（料理少女）·长篇个人线 + 选择题
+text = """
+
+==================================================
+                  渚浔笑辞 个人线
+==================================================
+按回车开始……
+"""
+
+[[actions]]
+text = """
+笑辞是联盟里的小太阳，最喜欢给大家做点心。
+她的笑容和她做的料理一样，温暖又治愈。
+你每天都期待和她一起度过的时光。
+
+有一天，她来你家玩送你了一块蛋挞
+
+【选择题：她把蛋挞送到你的嘴里，问：好吃吗？】
+1. 超级好吃！和你一样甜！
+2. 谢谢，我会好好品尝
+> """
+require_input = true
+set_ran_action = false
+
+
+[[actions]]
+requirement = { input_pattern = '^1' }
+text = "笑辞脸颊一红：讨厌啦～\n"
+
+[actions.flag_operations]
+likeability."渚浔笑辞" = ["add", "$likeability.渚浔笑辞", 15]
+
+
+[[actions]]
+requirement = { capture = true }
+text = "笑辞开心地笑了：太好了！\n"
+
+[actions.flag_operations]
+likeability."渚浔笑辞" = ["add", "$likeability.渚浔笑辞", 8]
+
+
+[[actions]]
+text = """
+
+【个人线·发展】
+你渐渐发现，笑辞的笑容背后也有疲惫。
+她总是努力让所有人开心，却常常忘了照顾自己。
+你开始主动陪她一起准备料理、收拾厨房。
+
+有一次，她把菜烧糊了，她看着她烧糊的菜，哭着说到："我是不是很没用啊？"
+
+【选择题：你该怎么做】
+1. 抱住她，说："没事的，每个人都有失误的时候，不要伤心嘛~""
+2. 安静陪着她
+> """
+require_input = true
+set_ran_action = false
+
+
+[[actions]]
+requirement = { input_pattern = '^1' }
+text = "笑辞眼眶一红，轻轻靠在你怀里。\n"
+
+[actions.flag_operations]
+likeability."渚浔笑辞" = ["add", "$likeability.渚浔笑辞", 20]
+
+
+[[actions]]
+requirement = { capture = true }
+text = "笑辞轻声说：有你在真好……\n"
+
+[actions.flag_operations]
+likeability."渚浔笑辞" = ["add", "$likeability.渚浔笑辞", 10]
+
+
+[[actions]]
+text = """
+笑辞拿着亲手做的巧克力，递到你面前。
+渚浔笑辞：我最喜欢你了！
+渚浔笑辞：以后……我想每天都做料理给你吃！
+
+【结局：笑颜与料理】
+她用笑容温暖你，你用温柔守护她。
+厨房里的烟火，成了你们最幸福的日常。
+==================================================
+           渚浔笑辞 · TRUE END 笑颜之味
+==================================================
+"""
+
+[actions.flag_operations]
+likeability."渚浔笑辞" = ["add", "$likeability.渚浔笑辞", 0]
+
+[[actions]]
+goto = "thank"

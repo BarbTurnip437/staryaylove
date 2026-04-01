@@ -1,0 +1,8 @@
+text = """
+
+转身离开，故事到此结束。
+按回车退出… """
+
+[[actions]]
+requirement = { capture = true }
+exit = true

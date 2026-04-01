@@ -1,0 +1,30 @@
+text = """
+
+不刘名科创开发出品
+豆芽人联盟©保留所有权利
+
+
+【第一章：旧教学楼的社团】
+（开学了，你刚报道完，坐在教室）
+（突然，白板上的QQ发来了一条由班主任发来的消息）
+（消息就是叫你到12栋教师宿舍后面的办公室一趟）
+（但是，你还没走过这一条路，刚到教师宿舍，你迷路了）
+（你随便乱晃，走到了旧教学楼最里面的房间）
+（门上贴着一张纸：豆芽人联盟 招生中）
+
+1. 推开门进去
+2. 先离开
+> """
+
+[[actions]]
+requirement = { input_pattern = '^1' }
+goto = "chapter/1"
+
+
+[[actions]]
+requirement = { input_pattern = '^2' }
+goto = "ending/left"
+
+
+[[actions]]
+requirement = { capture = true }

@@ -1,0 +1,29 @@
+text = """
+
+门轻轻推开，里面坐着一位带着耳机的少女。
+她正低头画画，笔尖在纸上轻轻滑动，
+阳光洒在她妩媚的脸上，显得格外漂亮。
+她突然抬起头，看向了你。
+千日坂芷芽：你……是来加入豆芽人联盟的吗？
+你该如何回答？
+
+1.“是的”
+2.“不是”
+> """
+
+[[actions]]
+requirement = { input_pattern = '^1' }
+goto = "chapter/2-3"
+
+[actions.flag_operations]
+progress = 10
+likeability."千日坂芷芽" = ["add", "$likeability.千日坂芷芽", 5]
+
+
+[[actions]]
+requirement = { input_pattern = '^2' }
+goto = "ending/left"
+
+
+[[actions]]
+requirement = { capture = true }
